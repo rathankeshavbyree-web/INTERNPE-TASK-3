@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR Tasks - Organize Your Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="gradient-bg"></div>
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- Hero Screen -->
+    <div class="hero-screen" id="heroScreen">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <div class="logo-circle">
+                    <span class="logo-text">SR</span>
+                </div>
+            </div>
+            <h1 class="hero-title">SR Tasks</h1>
+            <p class="hero-tagline">Organize your life. Focus on what matters.</p>
+            <button class="get-started-btn" id="getStartedBtn">
+                Get Started
+                <span class="btn-glow"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div class="app-container" id="appContainer">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-logo">
+                <div class="logo-circle small">
+                    <span class="logo-text">SR</span>
+                </div>
+                <h1 class="app-title">SR Tasks</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Input Section -->
+        <section class="input-section">
+            <div class="input-row">
+                <input type="text" class="task-input" id="taskInput" placeholder="Add a new task..." maxlength="100">
+                <button class="add-task-btn" id="addTaskBtn" aria-label="Add task">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-row secondary">
+                <input type="datetime-local" class="date-input" id="dateInput" aria-label="Due date and time">
+                <div class="priority-dropdown-container" id="priorityDropdownContainer">
+                    <button class="priority-dropdown-btn" id="priorityDropdownBtn" aria-label="Select priority">
+                        <span class="priority-indicator" id="priorityIndicator"></span>
+                        <span class="priority-label" id="priorityLabel">Priority</span>
+                        <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="priority-dropdown-menu" id="priorityDropdownMenu">
+                        <div class="priority-option" data-priority="low">
+                            <span class="priority-dot low"></span>
+                            <span>Low</span>
+                        </div>
+                        <div class="priority-option" data-priority="medium">
+                            <span class="priority-dot medium"></span>
+                            <span>Medium</span>
+                        </div>
+                        <div class="priority-option" data-priority="high">
+                            <span class="priority-dot high"></span>
+                            <span>High</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section class="controls-section">
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search tasks..." maxlength="50">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <button class="clear-completed-btn" id="clearCompletedBtn">Clear Completed</button>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+            <div class="progress-info">
+                <span class="task-counter" id="taskCounter">0 of 0 completed</span>
+                <span class="progress-percentage" id="progressPercentage">0% Completed</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </section>
+
+        <!-- Task List -->
+        <section class="task-list-section">
+            <div class="task-list" id="taskList">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+            <div class="empty-state" id="emptyState">
+                <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                </svg>
+                <p>No tasks yet. Add your first task above!</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal-content">
+            <h2 class="modal-title">Edit Task</h2>
+            <input type="text" class="modal-input" id="editTaskInput" placeholder="Task title..." maxlength="100">
+            <input type="datetime-local" class="modal-input" id="editDateInput">
+            <div class="modal-priority-container">
+                <button class="modal-priority-btn" id="editPriorityBtn">
+                    <span class="priority-indicator" id="editPriorityIndicator"></span>
+                    <span class="priority-label" id="editPriorityLabel">Priority</span>
+                    <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="modal-priority-menu" id="editPriorityMenu">
+                    <div class="priority-option" data-priority="low">
+                        <span class="priority-dot low"></span>
+                        <span>Low</span>
+                    </div>
+                    <div class="priority-option" data-priority="medium">
+                        <span class="priority-dot medium"></span>
+                        <span>Medium</span>
+                    </div>
+                    <div class="priority-option" data-priority="high">
+                        <span class="priority-dot high"></span>
+                        <span>High</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn cancel" id="cancelEditBtn">Cancel</button>
+                <button class="modal-btn save" id="saveEditBtn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
